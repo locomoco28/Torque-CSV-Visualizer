@@ -1,0 +1,31 @@
+{
+  "name": "Torque-CSV-Visualizer",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/locomoco28/Torque-CSV-Visualizer",
+  "author": "Eren <32169493+locomoco28@users.noreply.github.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "next dev",
+    "export": "next export"
+  },
+  "dependencies": {
+    "@chakra-ui/next-js": "^2.2.0",
+    "@chakra-ui/react": "^2.8.2",
+    "@emotion/react": "^11.13.3",
+    "@emotion/styled": "^11.13.0",
+    "@types/papaparse": "^5.3.14",
+    "chart.js": "^4.4.4",
+    "framer-motion": "^11.5.4",
+    "next": "^14.2.9",
+    "papaparse": "^5.4.1",
+    "react": "^18.3.1",
+    "react-chartjs-2": "^5.2.0",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "22.5.4",
+    "@types/react": "18.3.5",
+    "typescript": "5.6.2"
+  }
+}
