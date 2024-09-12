@@ -14,12 +14,12 @@ import {
   ChartOptions
 } from 'chart.js'
 import { Line } from 'react-chartjs-2'
-import { Box, Flex, Heading, Text } from '@chakra-ui/layout'
+import { Box, Flex, Heading } from '@chakra-ui/layout'
 import { Input } from '@chakra-ui/input'
 import { Card, CardBody, CardHeader } from '@chakra-ui/card'
 import { Checkbox } from '@chakra-ui/checkbox'
 import React from 'react'
-import { FormControl, FormLabel } from '@chakra-ui/form-control'
+import { FormControl } from '@chakra-ui/form-control'
 import { Radio, RadioGroup } from '@chakra-ui/react'
 
 ChartJS.register(
@@ -75,7 +75,7 @@ const chartOptions: ChartOptions<'line'> = {
 }
 
 function humanFileSize(size) {
-  var i = size == 0 ? 0 : Math.floor(Math.log(size) / Math.log(1024));
+  const i = size == 0 ? 0 : Math.floor(Math.log(size) / Math.log(1024));
   return +((size / Math.pow(1024, i)).toFixed(2)) * 1 + ' ' + ['B', 'kB', 'MB', 'GB', 'TB'][i];
 }
 
@@ -85,7 +85,7 @@ export default function Component() {
   const [selectedFileName, setSelectedFileName] = useState(null)
   const [parsedData, setParsedData] = useState<SensorData[]>([])
   const [selectedSensors, setSelectedSensors] = useState<string[]>([])
-  const [chartData, setChartData] = useState<any>(null)
+  const [chartData, setChartData] = useState<object|null>(null)
 
   useEffect(() => {
     const files = JSON.parse(window.localStorage.getItem("csv_files")) as Files
