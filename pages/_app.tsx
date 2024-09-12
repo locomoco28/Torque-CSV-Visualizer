@@ -1,8 +1,7 @@
-import {ChakraProvider, DarkMode} from '@chakra-ui/react'
+import {ChakraProvider, DarkMode, extendTheme} from '@chakra-ui/react'
 
 export default function App({Component, pageProps}) {
-    return <ChakraProvider ><DarkMode>
+    return <ChakraProvider>
         <Component {...pageProps}/>
-        </DarkMode>
     </ChakraProvider>
 }
