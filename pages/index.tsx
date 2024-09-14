@@ -74,6 +74,18 @@ const chartOptions: ChartOptions<'line'> = {
   },
 }
 
+type ChartData = {
+  labels: string[],
+  datasets: ChartDataset[]
+}
+
+type ChartDataset = {
+  label: string,
+  data: number[],
+  borderColor: string,
+  backgroundColor: string
+}
+
 function humanFileSize(size) {
   const i = size == 0 ? 0 : Math.floor(Math.log(size) / Math.log(1024));
   return +((size / Math.pow(1024, i)).toFixed(2)) * 1 + ' ' + ['B', 'kB', 'MB', 'GB', 'TB'][i];
@@ -85,7 +97,7 @@ export default function Component() {
   const [selectedFileName, setSelectedFileName] = useState(null)
   const [parsedData, setParsedData] = useState<SensorData[]>([])
   const [selectedSensors, setSelectedSensors] = useState<string[]>([])
-  const [chartData, setChartData] = useState<object|null>(null)
+  const [chartData, setChartData] = useState<ChartData|null>(null)
 
   useEffect(() => {
     const files = JSON.parse(window.localStorage.getItem("csv_files")) as Files
